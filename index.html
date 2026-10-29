@@ -5,9 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Flexin Media Team Duo</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="fonts/fonts.css">
 <style>
 /* Layout: notte milanese dentro un double cup. Una colonna mobile-first, il viola "lean" è l'unico accento forte, il bianco polistirolo del bicchiere fa da secondo colore. */
 :root{
@@ -502,7 +500,7 @@ section{position:relative}
           <div class="fld full"><label for="f-link">Portfolio o profilo social</label><input id="f-link" name="link" type="url" inputmode="url" placeholder="https://"><span class="err"></span></div>
           <div class="fld full"><label for="f-msg">Presentati</label><textarea id="f-msg" name="messaggio" required></textarea><span class="err"></span></div>
           <div class="fld full"><label for="f-cv">CV (PDF)</label><label class="file" for="f-cv"><input id="f-cv" name="cv" type="file" accept="application/pdf,.pdf"><span id="cvname">Scegli un file</span><b class="mono" style="font-weight:600">Sfoglia</b></label><span class="err"></span></div>
-          <div class="fld full"><label class="chk" for="f-priv"><input id="f-priv" name="privacy" type="checkbox" required><span>Acconsento al trattamento dei dati personali per valutare la mia candidatura.</span></label><span class="err"></span></div>
+          <div class="fld full"><label class="chk" for="f-priv"><input id="f-priv" name="privacy" type="checkbox" required><span>Ho letto l'<a href="privacy.html#candidature" target="_blank" style="text-decoration:underline">informativa privacy</a> e accetto che i miei dati, CV compreso, siano usati per valutare la candidatura.</span></label><span class="err"></span></div>
           <div class="full cta-row" style="align-items:center"><button class="btn fill" type="submit" id="send">Invia candidatura <span class="arr">→</span></button><span class="form-note mono" id="fnote">Anteprima: invio non ancora collegato</span></div>
         </form>
         <div class="sent" id="sent" role="status" aria-live="polite">
@@ -540,7 +538,7 @@ section{position:relative}
 
 <footer class="foot">
   <div class="wrap mono">
-    <span>© <span id="yr">2026</span> Flexin Generation srl · P.IVA 11646690963</span>
+    <span>© <span id="yr">2026</span> Flexin Generation srl · P.IVA 11646690963 · <a href="privacy.html">Privacy policy</a> · <a href="privacy.html#cookie">Cookie policy</a></span>
     <button class="replay mono" type="button" id="replay">Rivedi l'intro ↺</button>
   </div>
 </footer>
@@ -1031,7 +1029,7 @@ const YT = 'https://www.youtube.com/playlist?list=PLuzKgrCgdhUMViSuxYROmdSVbqjkJ
 /* work-with-us form */
 (function(){
   const form = document.getElementById('applyForm'); if(!form) return;
-  const FORM_ENDPOINT = ''; /* inserire qui l'URL che riceve le candidature */
+  const FORM_ENDPOINT = ''; /* inserire qui l'URL che riceve le candidature e aggiungere il servizio scelto nella sezione "Fornitori" di privacy.html */
   const sent = document.getElementById('sent'), send = document.getElementById('send');
   const cv = document.getElementById('f-cv'), cvname = document.getElementById('cvname');
   cv.addEventListener('change', ()=>{ cvname.textContent = cv.files[0] ? cv.files[0].name : 'Scegli un file'; check(cv); });
